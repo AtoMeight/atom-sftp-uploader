@@ -13,7 +13,7 @@ npm i @atom/sftp-uploader --save-dev
 ```js
 import AtomSftpUploader from '@atom/sftp-uploader';
 // If you use CommonJS (i.e NodeJS environment), it should be:
-// const { AtomSftpUploader } = require('@atom/sftp-uploader').default;
+// const AtomSftpUploader = require('@atom/sftp-uploader');
 
 const sftpUploader = new AtomSftpUploader({
   host: 'your host',
