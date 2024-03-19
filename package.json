@@ -1,0 +1,51 @@
+{
+  "name": "@atom/sftp-uploader",
+  "version": "0.0.1",
+  "description": "Plugin for uploading files to a specified server",
+  "keywords": [
+    "ssh2-sftp-client",
+    "ssh",
+    "sftp",
+    "uploader"
+  ],
+  "homepage": "https://github.com/AtoMeight/atom-sftp-uploader",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AtoMeight/atom-sftp-uploader"
+  },
+  "license": "MIT",
+  "author": "zhiyingzhou",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es5.js",
+  "typings": "dist/types",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc && rollup -c --bundleConfigAsCjs && rimraf compiled && typedoc --entryPoints src/index.ts --entryPointStrategy expand --out dist/docs --plugin typedoc-theme-hierarchy --theme hierarchy",
+    "start": "tsc -w & rollup -c -w --bundleConfigAsCjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ssh2-sftp-client": "^10.0.3"
+  },
+  "devDependencies": {
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@types/ssh2-sftp-client": "^9.0.3",
+    "chokidar": "^3.6.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.2.5",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "prettier-plugin-packagejson": "^2.4.12",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.13.0",
+    "ts-node": "^10.9.2",
+    "typedoc": "^0.25.12",
+    "typedoc-theme-hierarchy": "^4.1.2",
+    "typescript": "^5.4.2"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}
